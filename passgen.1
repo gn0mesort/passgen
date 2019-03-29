@@ -1,0 +1,47 @@
+.TH passgen 1 "March 23, 2019" "version 1.0.0" "User Commands"
+.SH NAME
+passgen \- generate passwords
+
+.SH SYNOPSIS
+ \fBpassgen\fP [\fIOPTIONS...\fP]
+
+.SH DESCRIPTION
+\fBpassgen\fP generates passwords using a specified alphabet and length.
+Prior to generating passwords the specified alphabet is shuffled to help
+mitigate attacks that rely on a consistent ordering to guess PRNG state.
+Random data is read from \fI/dev/urandom\fP to shuffle the
+alphabet and to generate password characters. 
+
+.SS Options
+.TP
+\fB-h, --help\fP
+Display program help text and exit.
+
+.TP
+\fB-v, --version\fP
+Output program version information and exit.
+
+.TP
+\fB-a, --alphabet=ALPHABET\fP
+Use the specified alphabet when generating passwords. \fBALPHABET\fP must be one
+of: upper, lower, alpha, numeric, alphanumeric, symbol, ascii, or nospace
+(defaults to ascii).
+
+.TP
+\fB-l, --length=LENGTH\fP
+Generate a password of the specified length (defaults to 64).
+
+.TP
+\fB-c, --custom=ALPHABET\fP
+Use a custom alphabet when generating passwords. This will override \fB-a\fP
+if it was used.
+
+.SH BUGS
+Bugs may be reported on the GitHub repository <https://github.com/gn0mesort/passgen>
+
+.SH SEE ALSO
+random(4)
+
+.SH AUTHOR
+Written by Alexander Rothman <gnomesort@megate.ch>
+
