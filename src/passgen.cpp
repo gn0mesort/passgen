@@ -4,19 +4,7 @@
 #include <algorithm>
 
 namespace mt::passgen {
-  constexpr random_device::result_type random_device::max() {
-    return std::numeric_limits<result_type>::max();
-  }
-
-  constexpr random_device::result_type random_device::min() {
-    return std::numeric_limits<result_type>::min();
-  }
-
-  random_device::result_type random_device::operator()() {
-    result_type r;
-    m_urandom.read(reinterpret_cast<char*>(&r), sizeof(result_type));
-    return r;
-  }
+  std::random_device generator::m_random{ "/dev/urandom" };
 
   generator::generator(const alphabet abc) {
     switch (abc) {

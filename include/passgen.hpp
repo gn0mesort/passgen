@@ -8,16 +8,6 @@
 #include <string>
 
 namespace mt::passgen {
-  class random_device {
-  public:
-    using result_type = std::default_random_engine::result_type;
-    static constexpr result_type max();
-    static constexpr result_type min();
-    result_type operator()();
-  private:
-    std::ifstream m_urandom{ "/dev/urandom", std::ios::binary };
-  };
-
   class generator {
   public:
     enum class alphabet {
@@ -35,8 +25,9 @@ namespace mt::passgen {
     generator(const std::string &abc);
     std::string operator()(const std::size_t length);
   private:
+    static std::random_device m_random;
+
     std::string m_alphabet{ "" };
-    random_device m_random{ };
   };
 }
 
