@@ -10,7 +10,7 @@ to handle command line input. If Getopt is not part of your C library
 `passgen` won't work.
 
 `passgen` also requires [`meson`](https://mesonbuild.com) and
-[`ninja`](https://ninja-build,org) to build.
+[`ninja`](https://ninja-build.org) to build.
 
 ## Building
 
