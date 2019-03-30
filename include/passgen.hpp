@@ -8,11 +8,11 @@
 #include <string>
 
 namespace mt::passgen {
-  class random_engine {
+  class random_device {
   public:
     using result_type = std::default_random_engine::result_type;
-    constexpr result_type max() const;
-    constexpr result_type min() const;
+    static constexpr result_type max();
+    static constexpr result_type min();
     result_type operator()();
   private:
     std::ifstream m_urandom{ "/dev/urandom", std::ios::binary };
@@ -36,7 +36,7 @@ namespace mt::passgen {
     std::string operator()(const std::size_t length);
   private:
     std::string m_alphabet{ "" };
-    random_engine m_random{ };
+    random_device m_random{ };
   };
 }
 

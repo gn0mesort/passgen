@@ -4,15 +4,15 @@
 #include <algorithm>
 
 namespace mt::passgen {
-  constexpr random_engine::result_type random_engine::max() const {
+  constexpr random_device::result_type random_device::max() {
     return std::numeric_limits<result_type>::max();
   }
 
-  constexpr random_engine::result_type random_engine::min() const {
+  constexpr random_device::result_type random_device::min() {
     return std::numeric_limits<result_type>::min();
   }
 
-  random_engine::result_type random_engine::operator()() {
+  random_device::result_type random_device::operator()() {
     result_type r;
     m_urandom.read(reinterpret_cast<char*>(&r), sizeof(result_type));
     return r;
