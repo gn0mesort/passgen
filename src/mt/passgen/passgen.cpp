@@ -1,4 +1,4 @@
-#include "passgen.hpp"
+#include "mt/passgen/passgen.hpp"
 
 #include <limits>
 #include <algorithm>

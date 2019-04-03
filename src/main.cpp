@@ -1,3 +1,4 @@
+
 #include <cinttypes>
 #include <cstddef>
 #include <cctype>
@@ -9,7 +10,7 @@
 
 #include <getopt.h>
 
-#include "passgen.hpp"
+#include "mt/passgen/passgen.hpp"
 
 using namespace mt::passgen;
 
@@ -29,7 +30,7 @@ int main(int argc, char **argv) {
       { "alphabet", required_argument, nullptr, 'a' },
       { "length", required_argument, nullptr, 'l' },
       { "custom", required_argument, nullptr, 'c' },
-      { nullptr, no_argument, nullptr, 0 }
+      { nullptr, no_argument, nullptr, 0 } // Null option terminates the list
     };
     const char *opts = "hva:l:c:";
     for (

@@ -24,7 +24,7 @@ incs = [
 ]
 srcs = [
   'src/main.cpp',
-  'src/passgen.cpp'
+  'src/mt/passgen/passgen.cpp'
 ]
 
 exe = executable(
@@ -61,4 +61,11 @@ custom_target(
   build_by_default: true,
   install: true,
   install_dir: get_option('bindir')
+)
+
+run_target(
+  'doxygen',
+  command: [
+    'doxygen'
+  ]
 )
