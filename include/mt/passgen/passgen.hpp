@@ -82,14 +82,14 @@ namespace mt::passgen {
      *
      * @param abc The built in alphabet to select for use.
      */
-    generator(const alphabet abc);
+    explicit generator(const alphabet abc);
 
     /**
      * @brief Constructs a generator using a custom alphabet.
      *
      * @param abc A string containing a custom alphabet to use.
      */
-    generator(const std::string &abc);
+    explicit generator(const std::string &abc);
 
     /**
      * @brief Generate a password with the given length.
